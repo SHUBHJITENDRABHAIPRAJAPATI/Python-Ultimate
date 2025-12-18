@@ -164,14 +164,16 @@ print("Exercise 10: Find Missing Number")
 print("=" * 50)
 
 def find_missing(numbers):
-    """Find missing number in sequence."""
+    """Find the first missing number in sequence."""
     if not numbers:
         return None
     
     full_set = set(range(min(numbers), max(numbers) + 1))
     number_set = set(numbers)
     missing = full_set - number_set
-    return list(missing)[0] if missing else None
+    
+    # Return the smallest missing number if any exist
+    return min(missing) if missing else None
 
 numbers = [1, 2, 3, 5, 6, 7]
 print(f"Numbers: {numbers}")

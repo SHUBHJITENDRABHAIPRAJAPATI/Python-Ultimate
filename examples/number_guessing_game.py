@@ -18,6 +18,7 @@ def number_guessing_game():
     secret_number = random.randint(1, 100)
     attempts = 0
     max_attempts = 10
+    guess = None
     
     while attempts < max_attempts:
         try:
@@ -40,7 +41,7 @@ def number_guessing_game():
             print("Invalid input! Please enter a number.")
             attempts -= 1  # Don't count invalid attempts
     
-    if attempts == max_attempts and guess != secret_number:
+    if attempts == max_attempts and (guess is None or guess != secret_number):
         print(f"\n😔 Game Over! The number was {secret_number}.")
     
     # Ask to play again
